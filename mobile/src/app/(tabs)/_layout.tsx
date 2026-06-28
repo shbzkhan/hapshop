@@ -8,15 +8,15 @@ export default function TabLayout() {
         <NativeTabs.Trigger.Icon sf="house.fill" md="home" />
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="wishlist">
-        <NativeTabs.Trigger.Icon sf="heart.fill" md="heart_minus" />
+        <NativeTabs.Trigger.Icon sf="suit.heart" md="favorite"/>
         <NativeTabs.Trigger.Label>WishList</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="history">
-        <NativeTabs.Trigger.Icon sf="history.fill" md="history" />
+        <NativeTabs.Trigger.Icon sf="doc.plaintext" md="receipt_long" />
         <NativeTabs.Trigger.Label>History</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="account">
-        <NativeTabs.Trigger.Icon sf="user.fill" md="user_attributes" />
+        <NativeTabs.Trigger.Icon sf="person.crop.circle" md="account_circle" />
         <NativeTabs.Trigger.Label>Account</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
     </NativeTabs>
