@@ -1,44 +1,51 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import HomeHeader from '@/components/HomeHeader';
+import HomeSlider from '@/components/HomeSlider';
+import { Dimensions, FlatList, Image, ScrollView, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import downArrowIcon from "@/assets/images/down-arrow.png"
-import buyIcon from "@/assets/images/Buy.png"
-import notificationIcon from "@/assets/images/Notification.png"
-import SearchField from '@/components/SearchField'
+import { moderateScale } from 'react-native-size-matters'
+
+const { width: screenWidth } = Dimensions.get('window');
+const CARD_WIDTH = screenWidth * 0.85
+
+const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+];
+
+type ItemProps = { title: string };
+
+const Item = ({ title }: ItemProps) => (
+  <View className='w-full h-12 bg-red-400'>
+    <Text>{title}</Text>
+  </View>
+);
 
 const HomeScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-white'>
-    <View className='px-4 mt-2 gap-5'>
-    <View className='flex-row justify-between items-center'>
-      <View className=''>
-        <Text className='text-gray text-sm'>Delivery address</Text>
-        <TouchableOpacity className='flex-row items-center justify-center -mt-1 gap-1'>
-          <Text className='text-[0.920rem] text-black font-medium'>Navi Mumbai, Maharastra</Text>
-          <View className='items-center justify-center'>
-            <Image source={downArrowIcon}
-            // className='w-4 h-4'
-            />
+
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => <Item title={item.title} />}
+        keyExtractor={item => item.id}
+        // className='flex-1 m-4'
+        ListHeaderComponent={
+          <View className='gap-5'>
+          <HomeHeader/>
+          <HomeSlider/>
           </View>
-        </TouchableOpacity>
-      </View>
-      <View className='flex-row justify-center items-center gap-4'>
-        <TouchableOpacity>
-          <Image source={buyIcon}
-            // className='w-6 h-4'
-            resizeMode='contain'
-            />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={notificationIcon}
-            // className='w-4 h-4'
-            resizeMode='contain'
-            />
-        </TouchableOpacity>
-      </View>
-    </View>
-    <SearchField/>
-    </View>
+        }
+      />
     </SafeAreaView>
   )
 }
