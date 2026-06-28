@@ -4,11 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import downArrowIcon from "@/assets/images/down-arrow.png"
 import buyIcon from "@/assets/images/Buy.png"
 import notificationIcon from "@/assets/images/Notification.png"
+import SearchField from '@/components/SearchField'
 
 const HomeScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-white'>
-    <View className='px-4 mt-2'>
+    <View className='px-4 mt-2 gap-5'>
     <View className='flex-row justify-between items-center'>
       <View className=''>
         <Text className='text-gray text-sm'>Delivery address</Text>
@@ -36,9 +37,7 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
     </View>
-    <View>
-      <Text>Search</Text>
-    </View>
+    <SearchField/>
     </View>
     </SafeAreaView>
   )
