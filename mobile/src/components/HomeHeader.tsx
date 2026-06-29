@@ -2,11 +2,13 @@ import buyIcon from "@/assets/images/Buy.png"
 import downArrowIcon from "@/assets/images/down-arrow.png"
 import notificationIcon from "@/assets/images/Notification.png"
 import SearchField from '@/components/SearchField'
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { moderateScale, ModerateScale } from "react-native-size-matters";
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 
 const HomeHeader = () => {
   return (
-    <View className='px-4 mt-2 gap-5'>
+    <View className='px-4 mt-2 gap-5'>  
                   <View className='flex-row justify-between items-center'>
                     <View className=''>
                       <Text className='text-gray text-sm'>Delivery address</Text>
@@ -20,16 +22,10 @@ const HomeHeader = () => {
                     </View>
                     <View className='flex-row justify-center items-center gap-4'>
                       <TouchableOpacity>
-                        <Image source={buyIcon}
-                          // className='w-6 h-4'
-                          resizeMode='contain'
-                        />
+                        <Ionicons name="cart-outline" size={moderateScale(24)} color="#393F42" />
                       </TouchableOpacity>
                       <TouchableOpacity>
-                        <Image source={notificationIcon}
-                          // className='w-4 h-4'
-                          resizeMode='contain'
-                        />
+                        <Ionicons name="notifications-outline" size={moderateScale(24)} color="#393F42" />
                       </TouchableOpacity>
                     </View>
                   </View>
