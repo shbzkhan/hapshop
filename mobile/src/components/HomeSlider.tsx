@@ -33,7 +33,7 @@ const HomeSlider = () => {
             >
               {HeaderData.map((post) => (
                 <View key={post.id} style={{ width: CARD_WIDTH, height: moderateScale(170), padding: moderateScale(5) }} 
-                className='h-40 px-3 '
+                className='h-40 px-3 shadow-lg shadow-black/70'
                 >
                   <Image
                     source={{ uri: post.image }}
