@@ -7,7 +7,7 @@ type ItemProps = { title: string, image: string, price: number };
 const Card = ({ item }: ItemProps) => {
     
   return (
-      <TouchableOpacity className='flex-1 w-full bg-cardColor rounded-md overflow-hidden shadow-lg shadow-black/70'>
+      <TouchableOpacity className='flex-1 w-full bg-cardColor rounded-md overflow-hidden shadow-lg shadow-black/70' activeOpacity={0.7}>
         <View style={{height:moderateScale(120)}}>
           <Image
           source={{uri: item.image}}
