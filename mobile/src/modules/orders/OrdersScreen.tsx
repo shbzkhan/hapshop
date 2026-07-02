@@ -4,7 +4,7 @@ import CustomSafeAreaView from '@/components/CustomSafeAreaView'
 
 const OrdersScreen = () => {
   return (
-    <CustomSafeAreaView>
+    <CustomSafeAreaView isBottomTab={true}>
       <Text>HistoryScreen</Text>
     </CustomSafeAreaView>
   )

@@ -4,7 +4,7 @@ import CustomSafeAreaView from '@/components/CustomSafeAreaView'
 
 const AccountScreen = () => {
   return (
-    <CustomSafeAreaView>
+    <CustomSafeAreaView isBottomTab={true}>
       <Text>AccountScreen</Text>
     </CustomSafeAreaView>
   )

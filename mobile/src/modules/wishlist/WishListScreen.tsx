@@ -4,7 +4,7 @@ import CustomSafeAreaView from '@/components/CustomSafeAreaView'
 
 const WishListScreen = () => {
   return (
-    <CustomSafeAreaView>
+    <CustomSafeAreaView isBottomTab={true}>
       <Text>WishListScreen</Text>
     </CustomSafeAreaView>
   )

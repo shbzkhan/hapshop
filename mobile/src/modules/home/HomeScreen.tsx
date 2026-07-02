@@ -40,10 +40,10 @@ const DATA = [
 
 const HomeScreen = () => {
   return (
-    <CustomSafeAreaView>
+    <CustomSafeAreaView isBottomTab={true}>
       <FlatList
         data={DATA}
-        renderItem={({ item }) => <Card item={item} />}
+        renderItem={({ item }) => <Card item ={item} />}
         keyExtractor={item => item.id}
         numColumns={2}
         // horizontal={false}
