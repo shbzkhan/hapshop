@@ -11,9 +11,9 @@ export default function TabLayout() {
         <NativeTabs.Trigger.Icon sf="suit.heart" md="favorite"/>
         <NativeTabs.Trigger.Label>WishList</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="history">
+      <NativeTabs.Trigger name="orders">
         <NativeTabs.Trigger.Icon sf="doc.plaintext" md="receipt_long" />
-        <NativeTabs.Trigger.Label>History</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>Orders</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="account">
         <NativeTabs.Trigger.Icon sf="person.crop.circle" md="account_circle" />

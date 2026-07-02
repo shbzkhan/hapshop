@@ -1,12 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
 
-const WishListScreen = () => {
+import WishListScreen from '@/modules/wishlist/WishListScreen'
+
+const WishList = () => {
   return (
-    <View>
-      <Text>WishListScreen</Text>
-    </View>
+    <WishListScreen/>
   )
 }
 
-export default WishListScreen
+export default WishList

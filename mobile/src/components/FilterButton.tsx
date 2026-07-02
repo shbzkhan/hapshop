@@ -7,7 +7,7 @@ import { fillMaxWidth, paddingAll } from '@expo/ui/jetpack-compose/modifiers';
 import { useRef, useState } from 'react';
 import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { FilterOffPercentData, FilterPriceData, FilterRatingData } from '@/constants/FilterData';
+import { FilterOffPercentData, FilterPriceData, FilterRatingData } from '@/data/FilterData';
 
 const FilterButton = () => {
   const [visible, setVisible] = useState(false);
