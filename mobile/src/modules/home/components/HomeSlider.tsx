@@ -42,7 +42,7 @@ const HomeSlider = () => {
                   />
                 </View>
               ))}
-            </ScrollView>
+    </ScrollView>
   )
 }
 

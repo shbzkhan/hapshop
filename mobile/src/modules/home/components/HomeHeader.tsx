@@ -5,6 +5,7 @@ import SearchField from '@/components/SearchField'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { moderateScale, ModerateScale } from "react-native-size-matters";
 import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { router } from "expo-router";
 
 const HomeHeader = () => {
   return (
@@ -24,7 +25,7 @@ const HomeHeader = () => {
                       <TouchableOpacity>
                         <Ionicons name="cart-outline" size={moderateScale(24)} color="#393F42" />
                       </TouchableOpacity>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={()=>router.push("/notifications")}>
                         <Ionicons name="notifications-outline" size={moderateScale(24)} color="#393F42" />
                       </TouchableOpacity>
                     </View>

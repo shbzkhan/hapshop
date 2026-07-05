@@ -1,9 +1,9 @@
 import HomeScreen from "@/modules/home/HomeScreen"
 
-const Home = () => {
+const index = () => {
   return (
     <HomeScreen/>
   )
 }
 
-export default Home
+export default index

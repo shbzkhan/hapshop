@@ -7,7 +7,7 @@
       "@/modules/*": ["./src/modules/*"],
       "@/assets/*": ["./assets/*"],
       "@/components/": ["./src/components/"],
-      "@/constants/": ["src/data"]
+      "@/data/": ["./src/data/"]
     }
   },
   "include": [
