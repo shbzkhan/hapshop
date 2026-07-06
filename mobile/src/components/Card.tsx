@@ -10,7 +10,7 @@ const Card = ({ item }: ItemProps) => {
     
   return (
       <TouchableOpacity className='flex-1 w-full bg-cardColor rounded-xl overflow-hidden shadow-lg shadow-black/70' activeOpacity={0.7} onPress={()=>router.push(`/product/${item.id}`)}>
-        <View style={{height:moderateScale(210)}} className='bg-gray/10 rounded-xl relative'>
+        <View style={{height:moderateScale(200)}} className='bg-gray/10 rounded-xl relative'>
         <View className='absolute bottom-2 left-3 flex-row gap-1.5 items-center bg-white/80 px-2 py-0.5 rounded'>
           <Text className='text-base font-semibold'>{item.rating}</Text>
           <FontAwesome name="star" size={12} color={item.rating <=2 ? "#FB923C":"#22C55E"} />
