@@ -1,8 +1,10 @@
+import { DefaultTheme, ThemeProvider } from 'expo-router';
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 
 export default function TabLayout() {
   return (
-    <NativeTabs minimizeBehavior="onScrollDown" backgroundColor="white">
+    <ThemeProvider value={DefaultTheme}>
+    <NativeTabs minimizeBehavior="onScrollDown">
       <NativeTabs.Trigger name="index" >
         <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon sf="house.fill" md="home" />
@@ -20,5 +22,6 @@ export default function TabLayout() {
         <NativeTabs.Trigger.Label>Account</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
     </NativeTabs>
+    </ThemeProvider>
   );
 }
