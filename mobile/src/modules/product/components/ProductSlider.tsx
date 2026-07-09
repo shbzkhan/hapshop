@@ -32,7 +32,7 @@ const ProductSlider = () => {
                       snapToInterval={CARD_WIDTH}
                     >
                       {HeaderData.map((post) => (
-                        <View key={post.id} style={{ width: CARD_WIDTH, height: moderateScale(440)}} 
+                        <View key={post.id} style={{ width: CARD_WIDTH, height: moderateScale(420)}} 
                         className='bg-gray/10 justify-center items-center '
                         >
                           <Image
