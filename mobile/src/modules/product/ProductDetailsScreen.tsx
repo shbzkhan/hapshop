@@ -6,6 +6,7 @@ import { Dimensions, ScrollView, Text, TouchableOpacity, View } from 'react-nati
 import ProductHeader from './components/ProductHeader';
 import ProductSlider from './components/ProductSlider';
 import SelectVariant from './components/SelectVariant';
+import DeliveryDetails from './components/DeliveryDetails';
 
 const { width: screenWidth } = Dimensions.get('window');
 const CARD_WIDTH = screenWidth 
@@ -34,7 +35,7 @@ const ProductDetailsScreen = ({id}:string) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName='px-4 gap-5'>
       <ProductSlider/>
       <SelectVariant/>
-      <View>
+      <View className='gap-5'>
       <View className='gap-2'>
         <View className='flex-row gap-2 items-center'>
           <Text className='text-black font-semibold text-xl'>Wonder Care</Text>
@@ -57,6 +58,7 @@ const ProductDetailsScreen = ({id}:string) => {
           <Text className='text-2xl text-black font-extrabold'>₹299</Text>
         </View>
       </View>
+      <DeliveryDetails/>
       </View>
       </ScrollView>
     </CustomSafeAreaView>
