@@ -7,6 +7,7 @@ import ProductHeader from './components/ProductHeader';
 import ProductSlider from './components/ProductSlider';
 import SelectVariant from './components/SelectVariant';
 import DeliveryDetails from './components/DeliveryDetails';
+import BottomBox from './components/BottomBox';
 
 const { width: screenWidth } = Dimensions.get('window');
 const CARD_WIDTH = screenWidth 
@@ -61,6 +62,7 @@ const ProductDetailsScreen = ({id}:string) => {
       <DeliveryDetails/>
       </View>
       </ScrollView>
+      <BottomBox/>
     </CustomSafeAreaView>
   )
 }

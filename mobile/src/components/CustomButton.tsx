@@ -1,22 +1,28 @@
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
-import React from 'react'
+import { ActivityIndicator, Text, TouchableOpacity } from 'react-native'
 
 
 interface Props {
-    title:string
-    handlePress:()=>void
-    isLoading?:boolean
+  title: string
+  handlePress: () => void
+  isLoading?: boolean
+  classname?: string
+  color?: string
+  textClassname?: string
 }
-const CustomButton = ({title, handlePress, isLoading}) => {
+const CustomButton = ({ title, handlePress, isLoading, classname, color, textClassname }: Props) => {
   return (
-    <TouchableOpacity className='w-full bg-primary py-3 justify-center items-center rounded-md' activeOpacity={0.7}>
-        {isLoading?
+    <TouchableOpacity
+      onPress={handlePress}
+      className={`w-full py-3 justify-center items-center rounded-md ${classname} ${color ? color :'bg-primary'} `}
+      activeOpacity={0.7}
+    >
+      {isLoading ?
         <ActivityIndicator
-        size={"small"}
-        color='white'
+          size={"small"}
+          color='white'
         />
         :
-        <Text className={`font-rubik-medium text-white font-medium`}>{title}</Text>}
+        <Text className={`font-rubik-medium  font-medium ${textClassname ? textClassname : 'text-white'}`}>{title}</Text>}
     </TouchableOpacity>
   )
 }
