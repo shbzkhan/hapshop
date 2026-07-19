@@ -22,7 +22,7 @@ const HomeHeader = () => {
                       </TouchableOpacity>
                     </View>
                     <View className='flex-row justify-center items-center gap-4'>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={()=>router.push("/cart")}>
                         <Ionicons name="cart-outline" size={moderateScale(24)} color="#393F42" />
                       </TouchableOpacity>
                       <TouchableOpacity onPress={()=>router.push("/notifications")}>

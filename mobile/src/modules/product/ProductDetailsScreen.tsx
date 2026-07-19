@@ -8,6 +8,8 @@ import ProductSlider from './components/ProductSlider';
 import SelectVariant from './components/SelectVariant';
 import DeliveryDetails from './components/DeliveryDetails';
 import BottomBox from './components/BottomBox';
+import CustomHeader from '@/components/CustomHeader';
+import { router } from 'expo-router';
 
 const { width: screenWidth } = Dimensions.get('window');
 const CARD_WIDTH = screenWidth 
@@ -32,7 +34,7 @@ const ProductDetailsScreen = ({id}:string) => {
   const title = 'Comfort Insoles for Men & Women -- Breathable Shock Absorbing Memory Foam, Gel Full length Orthotic, Regular, Sports Shoe Insole.'
   return (
     <CustomSafeAreaView className="gap-5">
-      <ProductHeader/>
+      <CustomHeader title='Details Product' isIconVisible={true} iconOnPress={()=>router.push("/cart")} />
       <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName='px-4 gap-5'>
       <ProductSlider/>
       <SelectVariant/>
