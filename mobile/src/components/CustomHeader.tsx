@@ -13,7 +13,7 @@ interface Props {
 
 }
 
-const CustomHeader = ({title, iconOnPress, isIconVisible, ioniconsName = 'cart-outline' }:Props) => {
+const CustomHeader = ({title, iconOnPress, isIconVisible = false, ioniconsName = 'cart-outline' }:Props) => {
   return (
    <View className="flex-row items-center justify-between px-4 mt-2">
       <TouchableOpacity onPress={() => router.back()}>
@@ -22,7 +22,7 @@ const CustomHeader = ({title, iconOnPress, isIconVisible, ioniconsName = 'cart-o
       <View>
         <Text className="text-xl font-bold text-black">{title}</Text>
       </View>
-      <TouchableOpacity className={`${!isIconVisible && 'hidden' }`} onPress={iconOnPress}>
+      <TouchableOpacity className={`${!isIconVisible && 'opacity-0' }`} disabled={!isIconVisible} onPress={iconOnPress}>
         <Ionicons
           name={ioniconsName}
           size={moderateScale(24)}
