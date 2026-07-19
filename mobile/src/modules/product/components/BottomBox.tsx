@@ -4,7 +4,7 @@ import CustomButton from '@/components/CustomButton'
 
 const BottomBox = () => {
   return (
-    <View className='px-4 flex-row justify-between pb-2'>
+    <View className='px-4 w-full flex-row justify-between pb-2 '>
       <CustomButton 
       title='Add To Cart'
       classname='w-[48%] py-4' 

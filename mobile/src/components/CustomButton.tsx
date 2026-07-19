@@ -13,7 +13,7 @@ const CustomButton = ({ title, handlePress, isLoading, classname, color, textCla
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className={`w-full py-3 justify-center items-center rounded-md ${classname} ${color ? color :'bg-primary'} `}
+      className={`py-3 justify-center items-center rounded-md ${classname} ${color ? color :'bg-primary'} `}
       activeOpacity={0.7}
     >
       {isLoading ?
