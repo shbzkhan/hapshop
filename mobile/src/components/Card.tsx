@@ -4,6 +4,7 @@ import { moderateScale } from 'react-native-size-matters';
 import CustomButton from './CustomButton';
 import { router } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 type ItemProps = { title: string, image: string, price: number };
 const Card = ({ item }: ItemProps) => {
