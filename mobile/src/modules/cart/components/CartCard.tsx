@@ -1,20 +1,33 @@
 import { Checkbox } from "expo-checkbox";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import Feather from '@expo/vector-icons/Feather';
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-const CartCard = () => {
-  const [isChecked, setIsChecked] = useState(false);
+interface Props {
+  selectedItem:string[]
+  setSelectedItem: Dispatch<SetStateAction<string[]>>
+}
+const CartCard = ({selectedItem, setSelectedItem}:Props) => {
+  // const [isChecked, setIsChecked] = useState(false);
   const [unit, setUnit] = useState(1)
+
+  const handleCheckbox = (id: string) => {
+  setSelectedItem((prev) =>
+    prev.includes(id)
+      ? prev.filter((item) => item !== id)
+      : [...prev, id]
+  );
+};
+  
   return (
     <View className="flex-row" style={{gap:moderateScale(7)}}>
       <Checkbox
-        value={isChecked}
-        onValueChange={setIsChecked}
-        color={isChecked ? "#67C4A7" : undefined}
+        value={selectedItem.includes('123456')}
+        onValueChange={()=>handleCheckbox('123456')}
+        color={selectedItem.includes('123456') ? "#67C4A7" : undefined}
         style={{
           width: moderateScale(20),
           height: moderateScale(20),
@@ -68,7 +81,7 @@ const CartCard = () => {
             <Pressable disabled={unit === 1} onPress={()=>setUnit(unit-1)}>
               <Feather name="minus-circle" size={moderateScale(18)} color={unit === 1 ?"#F0F2F1" : "#C8C8CB"} />
             </Pressable>
-            <Text className="text-xl">{unit}</Text>
+            <Text className="text-lg">{unit}</Text>
             <Pressable disabled={unit === 9} onPress={()=>setUnit(unit + 1)}>
               <Feather name="plus-circle" size={moderateScale(18)} color={unit === 9 ?"#F0F2F1" : "#C8C8CB"} />
             </Pressable>

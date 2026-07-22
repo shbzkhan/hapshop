@@ -8,10 +8,12 @@ interface Props {
   classname?: string
   color?: string
   textClassname?: string
+  disabled?: boolean
 }
-const CustomButton = ({ title, handlePress, isLoading, classname, color, textClassname }: Props) => {
+const CustomButton = ({ title, handlePress, isLoading, classname, color, textClassname, disabled=false }: Props) => {
   return (
     <TouchableOpacity
+    disabled={disabled}
       onPress={handlePress}
       className={`py-3 justify-center items-center rounded-md ${classname} ${color ? color :'bg-primary'} `}
       activeOpacity={0.7}
