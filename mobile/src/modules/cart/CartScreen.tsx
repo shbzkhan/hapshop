@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, FlatList } from "react-native";
 import React from "react";
 import CustomSafeAreaView from "@/components/CustomSafeAreaView";
 import CustomHeader from "@/components/CustomHeader";
@@ -12,9 +12,13 @@ const CartScreen = () => {
         <CustomHeader title="Your Cart" />
         <DeliveryAddressBar />
       </View>
-      <ScrollView contentContainerClassName="gap-3 px-4 mt-5">
-        <CartCard/>
-      </ScrollView>
+      <FlatList
+        data={[1, 2, 3, 4]}
+        keyExtractor={(item) => item.toString()}
+        renderItem={({ item }) => <CartCard />}
+        contentContainerClassName="gap-7 px-4 mt-5"
+        className="flex-1"
+/>
     </CustomSafeAreaView>
   );
 };

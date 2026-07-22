@@ -10,17 +10,18 @@ const CartCard = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [unit, setUnit] = useState(1)
   return (
-    <View className="flex-row gap-3 items-center">
+    <View className="flex-row" style={{gap:moderateScale(7)}}>
       <Checkbox
         value={isChecked}
         onValueChange={setIsChecked}
         color={isChecked ? "#67C4A7" : undefined}
         style={{
-          width: moderateScale(22),
-          height: moderateScale(22),
+          width: moderateScale(20),
+          height: moderateScale(20),
           borderColor: "#F0F2F1",
           borderRadius: 4,
         }}
+        className="my-auto"
       />
       <View
         style={{ height: moderateScale(90), width: moderateScale(100) }}
@@ -35,17 +36,17 @@ const CartCard = () => {
         />
       </View>
       {/* text */}
-      <View className="justify-between h-full py-1 flex-1">
+      <View className="justify-between py-1 flex-1">
         <View>
-          <Text className="font-bold" numberOfLines={1} style={{fontSize:moderateScale(14)}}>Air pods max by Apple Air pods max by Apple Air pods max by Apple </Text>
+          <Text className="font-bold" numberOfLines={1} style={{fontSize:moderateScale(13)}}>Air pods max by Apple</Text>
           <Text className="text-gray text-base" style={{fontSize:moderateScale(10)}}>Variant: Gray</Text>
         </View>
           <View className="flex-row items-center gap-1">
-            <FontAwesome name="star" size={moderateScale(12)} />
-            <FontAwesome name="star" size={moderateScale(12)} />
-            <FontAwesome name="star" size={moderateScale(12)} />
-            <FontAwesome name="star" size={moderateScale(12)} />
-            <FontAwesome name="star" size={moderateScale(12)} />
+            <FontAwesome name="star" size={moderateScale(11)} />
+            <FontAwesome name="star" size={moderateScale(11)} />
+            <FontAwesome name="star" size={moderateScale(11)} />
+            <FontAwesome name="star" size={moderateScale(11)} />
+            <FontAwesome name="star" size={moderateScale(11)} />
             <Text className="text-primary ml-1" style={{fontSize:moderateScale(10)}}>4.3</Text>
             <Text className="text-primary" style={{fontSize:moderateScale(10)}}></Text>
             <Text className="text-primary" style={{fontSize:moderateScale(10)}}>4.3</Text>
@@ -55,24 +56,24 @@ const CartCard = () => {
           <View className="flex-row items-center gap-3">
           <Text
             className="text-gray line-through "
-            style={{fontSize:moderateScale(12)}}
+            style={{fontSize:moderateScale(10)}}
             numberOfLines={1}>{`₹1200`}</Text>
           <Text
             className="text-black font-bold text-lg"
-            style={{fontSize:moderateScale(16)}}
+            style={{fontSize:moderateScale(14)}}
             numberOfLines={1}>{`₹999`}</Text>
 
           </View>
           <View className="flex-row gap-2 items-center">
             <Pressable disabled={unit === 1} onPress={()=>setUnit(unit-1)}>
-              <Feather name="minus-circle" size={moderateScale(20)} color={unit === 1 ?"#F0F2F1" : "#C8C8CB"} />
+              <Feather name="minus-circle" size={moderateScale(18)} color={unit === 1 ?"#F0F2F1" : "#C8C8CB"} />
             </Pressable>
             <Text className="text-xl">{unit}</Text>
             <Pressable disabled={unit === 9} onPress={()=>setUnit(unit + 1)}>
-              <Feather name="plus-circle" size={moderateScale(20)} color={unit === 9 ?"#F0F2F1" : "#C8C8CB"} />
+              <Feather name="plus-circle" size={moderateScale(18)} color={unit === 9 ?"#F0F2F1" : "#C8C8CB"} />
             </Pressable>
             <Pressable>
-              <MaterialCommunityIcons name="delete" size={moderateScale(21)} color="#C8C8CB" />
+              <MaterialCommunityIcons name="delete" size={moderateScale(19)} color="#C8C8CB" />
             </Pressable>
           </View>
         </View>
