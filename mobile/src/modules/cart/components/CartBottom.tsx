@@ -5,12 +5,13 @@ import Entypo from '@expo/vector-icons/Entypo'
 
 interface Props {
     isSummaryShow: boolean
-    setIsSummaryShow: Dispatch<SetStateAction<boolean>>;
+    setIsSummaryShow: Dispatch<SetStateAction<boolean>>
     selectedItem: string[]
-    setSelectedItem: Dispatch<SetStateAction<string[]>>;
+    setSelectedItem: Dispatch<SetStateAction<string[]>>
+    totalPrice: number
 }
-const CartBottom = ({isSummaryShow, setIsSummaryShow, selectedItem, setSelectedItem}:Props) => {
-    
+const CartBottom = ({isSummaryShow, setIsSummaryShow, selectedItem, setSelectedItem, totalPrice}:Props) => {
+    console.log(totalPrice)
   return (
     <View className='px-4 border-t border-border gap-4 py-5'>
       <View className='flex-row items-center justify-between'>
@@ -22,8 +23,8 @@ const CartBottom = ({isSummaryShow, setIsSummaryShow, selectedItem, setSelectedI
       {
         isSummaryShow && (
       <View className='flex-row items-center justify-between'>
-        <Text className='text-base'>Totals</Text>
-        <Text className='text-lg font-medium'>₹999</Text>
+        <Text className='text-base text-black'>Totals</Text>
+        <Text className='text-lg font-medium'>₹ {totalPrice}</Text>
       </View>
 
         )

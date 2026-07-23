@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-type ItemProps = { title: string, image: string, price: number };
+type ItemProps = { _id: string, title: string, image: string, price: number };
 const Card = ({ item }: ItemProps) => {
     
   return (

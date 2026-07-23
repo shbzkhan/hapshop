@@ -5,10 +5,19 @@ import CustomHeader from "@/components/CustomHeader";
 import DeliveryAddressBar from "@/components/DeliveryAddressBar";
 import CartCard from "./components/CartCard";
 import CartBottom from "./components/CartBottom";
+import { ProductData } from "@/data/ProductData";
 
 const CartScreen = () => {
   const [isSummaryShow, setIsSummaryShow] = useState(true)
   const [selectedItem, setSelectedItem] = useState<string[]>([])
+
+  const totalPrice = ProductData
+    .filter(item => selectedItem.includes(item._id))
+    .reduce(
+      // (sum, item) => sum + item.product.price * item.quantity,0 it will use with backend
+      (sum, item) => sum + item.price * item.quantity,0 
+    );
+
   return (
     <CustomSafeAreaView>
       <View className="gap-3">
@@ -16,10 +25,11 @@ const CartScreen = () => {
         <DeliveryAddressBar />
       </View>
       <FlatList
-        data={[1, 2, 3, 4]}
-        keyExtractor={(item) => item.toString()}
+        data={ProductData}
+        keyExtractor={(item) => item._id}
         renderItem={({ item }) => 
         <CartCard 
+        item={item}
         selectedItem = {selectedItem}
         setSelectedItem = {setSelectedItem}
         />
@@ -33,6 +43,7 @@ const CartScreen = () => {
       setIsSummaryShow = {setIsSummaryShow}
       selectedItem = {selectedItem}
       setSelectedItem={setSelectedItem}
+      totalPrice = {totalPrice}
        />
     </CustomSafeAreaView>
   );
