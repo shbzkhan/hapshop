@@ -29,7 +29,7 @@ const CartBottom = ({handlePress, totalPrice}:Props) => {
       }
       <CustomButton 
       handlePress={handlePress} 
-      disabled={totalPrice<0} 
+      disabled={totalPrice<1} 
       title={totalPrice ? 'Select payment method' : 'Continue for payments'} 
         color={totalPrice ? 'bg-primary': "bg-border"}
         textClassname={totalPrice ? 'text-white': "text-black"}
