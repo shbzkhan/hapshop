@@ -6,9 +6,9 @@ import DeliveryAddressBar from "@/components/DeliveryAddressBar";
 import CartCard from "./components/CartCard";
 import CartBottom from "./components/CartBottom";
 import { ProductData } from "@/data/ProductData";
+import { router } from "expo-router";
 
 const CartScreen = () => {
-  const [isSummaryShow, setIsSummaryShow] = useState(true)
   const [selectedItem, setSelectedItem] = useState<string[]>([])
 
   const totalPrice = ProductData
@@ -39,10 +39,12 @@ const CartScreen = () => {
         className="flex-1"
       />
       <CartBottom
-      isSummaryShow = {isSummaryShow}
-      setIsSummaryShow = {setIsSummaryShow}
-      selectedItem = {selectedItem}
-      setSelectedItem={setSelectedItem}
+      handlePress={()=>router.push({
+        pathname:"/cart/checkout",
+        params:{
+          ids:JSON.stringify(selectedItem)
+        }
+      })}
       totalPrice = {totalPrice}
        />
     </CustomSafeAreaView>

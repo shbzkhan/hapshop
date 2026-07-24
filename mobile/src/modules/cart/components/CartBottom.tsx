@@ -2,16 +2,14 @@ import { View, Text, Pressable } from 'react-native'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import CustomButton from '@/components/CustomButton'
 import Entypo from '@expo/vector-icons/Entypo'
+import { router } from 'expo-router'
 
 interface Props {
-    isSummaryShow: boolean
-    setIsSummaryShow: Dispatch<SetStateAction<boolean>>
-    selectedItem: string[]
-    setSelectedItem: Dispatch<SetStateAction<string[]>>
+    handlePress: ()=>void
     totalPrice: number
 }
-const CartBottom = ({isSummaryShow, setIsSummaryShow, selectedItem, setSelectedItem, totalPrice}:Props) => {
-    console.log(totalPrice)
+const CartBottom = ({handlePress, totalPrice}:Props) => {
+  const [isSummaryShow, setIsSummaryShow] = useState(true)
   return (
     <View className='px-4 border-t border-border gap-4 py-5'>
       <View className='flex-row items-center justify-between'>
@@ -29,9 +27,12 @@ const CartBottom = ({isSummaryShow, setIsSummaryShow, selectedItem, setSelectedI
 
         )
       }
-      <CustomButton disabled={!selectedItem.length} title={selectedItem.length ? 'Select payment method' : 'Continue for payments'} 
-        color={selectedItem.length ? 'bg-primary': "bg-border"}
-        textClassname={selectedItem.length ? 'text-white': "text-black"}
+      <CustomButton 
+      handlePress={handlePress} 
+      disabled={totalPrice<0} 
+      title={totalPrice ? 'Select payment method' : 'Continue for payments'} 
+        color={totalPrice ? 'bg-primary': "bg-border"}
+        textClassname={totalPrice ? 'text-white': "text-black"}
       />
     </View>
   )
