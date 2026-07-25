@@ -1,10 +1,9 @@
+import WishlistScreen from "@/modules/wishlist/WishlistScreen"
 
-import WishListScreen from '@/modules/wishlist/WishListScreen'
-
-const WishList = () => {
+const Wishlist = () => {
   return (
-    <WishListScreen/>
+    <WishlistScreen/>
   )
 }
 
-export default WishList
+export default Wishlist

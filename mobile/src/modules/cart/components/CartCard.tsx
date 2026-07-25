@@ -7,7 +7,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 
-interface ItemProps { _id: string, title: string, image: string, price: number, quantity:number };
+interface ItemProps { _id: string, title: string, image: string, price: number, quantity:number, rating:number };
 interface Props {
   item: ItemProps
   selectedItem:string[]
@@ -69,16 +69,10 @@ const decreaseUnit = () => {
           <Text className="font-bold text-black" numberOfLines={1} style={{fontSize:moderateScale(13)}}>{item.title}</Text>
           <Text className="text-gray text-base" style={{fontSize:moderateScale(10)}}>Variant: Gray</Text>
         </View>
-          <View className="flex-row items-center gap-1">
-            <FontAwesome name="star" size={moderateScale(11)} />
-            <FontAwesome name="star" size={moderateScale(11)} />
-            <FontAwesome name="star" size={moderateScale(11)} />
-            <FontAwesome name="star" size={moderateScale(11)} />
-            <FontAwesome name="star" size={moderateScale(11)} />
-            <Text className="text-primary ml-1" style={{fontSize:moderateScale(10)}}>4.3</Text>
-            <Text className="text-primary" style={{fontSize:moderateScale(10)}}></Text>
-            <Text className="text-primary" style={{fontSize:moderateScale(10)}}>163</Text>
-          </View>
+          <View className='flex-row gap-1.5 items-center bg-white/80 rounded'>
+          <Text className='text-base font-semibold'>{item.rating}</Text>
+          <FontAwesome name="star" size={12} color={item.rating <=2 ? "#FB923C":"#22C55E"} />
+        </View>
         {/* <View> */}
         <View className="flex-row items-center gap-2 justify-between ">
           <View className="flex-row items-center gap-3">

@@ -20,7 +20,7 @@ const HomeScreen = () => {
         renderItem={({ item }) => <Card item ={item} />}
         keyExtractor={item => item._id}
         numColumns={2}
-        // horizontal={false}
+        showsVerticalScrollIndicator={false}
         className='flex-1'
         contentContainerClassName="pb-32"
       columnWrapperClassName="flex gap-2 px-4 mt-5"

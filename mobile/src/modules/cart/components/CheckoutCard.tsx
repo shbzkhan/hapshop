@@ -1,10 +1,6 @@
-import { Checkbox } from "expo-checkbox";
-import { Dispatch, SetStateAction, useState } from "react";
-import { Image, Pressable, Text, View } from "react-native";
-import { moderateScale } from "react-native-size-matters";
-import Feather from '@expo/vector-icons/Feather';
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Image, Text, View } from "react-native";
+import { moderateScale } from "react-native-size-matters";
 
 
 interface ItemProps { _id: string, title: string, image: string, price: number, quantity:number };

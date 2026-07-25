@@ -1,10 +1,8 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { router } from 'expo-router';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
 import CustomButton from './CustomButton';
-import { router } from 'expo-router';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import AntDesign from '@expo/vector-icons/AntDesign';
 
 type ItemProps = { _id: string, title: string, image: string, price: number };
 const Card = ({ item }: ItemProps) => {
