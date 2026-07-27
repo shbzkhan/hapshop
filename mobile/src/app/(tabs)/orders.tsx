@@ -1,8 +1,11 @@
-import OrdersScreen from '@/modules/orders/OrdersScreen'
+import { Text } from 'react-native'
+import CustomSafeAreaView from '@/components/CustomSafeAreaView'
 
 const Orders = () => {
   return (
-    <OrdersScreen/>
+    <CustomSafeAreaView isBottomTab={true}>
+      <Text>HistoryScreen</Text>
+    </CustomSafeAreaView>
   )
 }
 

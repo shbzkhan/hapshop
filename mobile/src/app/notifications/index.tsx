@@ -1,8 +1,11 @@
-import NotificationsScreen from '@/modules/notifications/NotificationsScreen'
+import CustomSafeAreaView from '@/components/CustomSafeAreaView'
+import { Text } from 'react-native'
 
 const index = () => {
   return (
-    <NotificationsScreen/>
+    <CustomSafeAreaView>
+      <Text>NotificationsScreen</Text>
+    </CustomSafeAreaView>
   )
 }
 

@@ -1,8 +1,11 @@
-import AccountScreen from '@/modules/account/AccountScreen'
+import CustomSafeAreaView from '@/components/CustomSafeAreaView'
+import { Text } from 'react-native'
 
 const Account = () => {
   return (
-    <AccountScreen/>
+    <CustomSafeAreaView isBottomTab={true}>
+      <Text>AccountScreen</Text>
+    </CustomSafeAreaView>
   )
 }
 
