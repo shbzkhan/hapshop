@@ -2,7 +2,6 @@ import CustomHeader from '@/components/CustomHeader';
 import CustomSafeAreaView from '@/components/CustomSafeAreaView';
 import DeliveryAddressBar from '@/components/DeliveryAddressBar';
 import { ProductData } from '@/data/ProductData';
-import CartScreen from '@/modules/cart/CartScreen'
 import CartBottom from '@/modules/cart/components/CartBottom';
 import CartCard from '@/modules/cart/components/CartCard';
 import { router } from 'expo-router';
