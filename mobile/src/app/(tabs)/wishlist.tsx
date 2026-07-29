@@ -14,8 +14,9 @@ const Wishlist = () => {
         numColumns={2}
         className='flex-1'
         showsVerticalScrollIndicator={false}
-        contentContainerClassName="pb-32"
-        columnWrapperClassName="flex gap-2 mt-2"
+        contentContainerClassName="pb-32 gap-5"
+        columnWrapperClassName="flex gap-2"
+
         ListHeaderComponent={
           <SimpleCustomHeader title='My WishList' />
         }
