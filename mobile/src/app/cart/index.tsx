@@ -37,6 +37,7 @@ const index = () => {
       }
         contentContainerClassName="gap-7 px-4 mt-5"
         className="flex-1"
+        showsVerticalScrollIndicator={false}
       />
       <CartBottom
       handlePress={()=>router.push({

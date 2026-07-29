@@ -29,14 +29,44 @@ const OrdersData:OrderCardProps[] = [
     deliveryStatus: "Out for delivery",
     deliveryDate:"12 Nov 2026"
   },
+  {
+    image: 'https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
+    productTitle:"Macbook air m2 16gb 526gb",
+    deliveryStatus: "Cancelled",
+    deliveryDate:"12 Nov 2026"
+  },
+  {
+    image: 'https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
+    productTitle:"Macbook air m2 16gb 526gb ssd with extarnal ssd 1 tb storage1",
+    deliveryStatus: "Refunded",
+    deliveryDate:"12 Nov 2026"
+  },
+  {
+    image: 'https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
+    productTitle:"Macbook air m2 16gb 526gb ssd with extarnal ssd 1 tb storage2",
+    deliveryStatus: "Delivered",
+    deliveryDate:"12 Nov 2026"
+  },
+  {
+    image: 'https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
+    productTitle:"Macbook air m2 16gb 526gb ssd with extarnal ssd 1 tb storage3",
+    deliveryStatus: "Out for delivery",
+    deliveryDate:"12 Nov 2026"
+  },
+  {
+    image: 'https://wowslider.com/sliders/demo-18/data1/images/hongkong1081704.jpg',
+    productTitle:"Macbook air m1 16gb 526gb ssd with extarnal ssd 1 tb storage",
+    deliveryStatus: "Delivered",
+    deliveryDate:"12 Nov 2026"
+  },
 ]
 
 const Orders = () => {
   return (
     <CustomSafeAreaView isBottomTab={true} className="px-4">
       <FlatList
-      contentContainerClassName="gap-7"
        className="flex-1"
+       showsVerticalScrollIndicator={false}
       data={OrdersData}
       keyExtractor={(item)=>item.productTitle}
       renderItem={({item})=> <OrderCard item={item}/>}

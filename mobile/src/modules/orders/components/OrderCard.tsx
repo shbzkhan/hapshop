@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from 'react-native'
+import { View, Text, Pressable, Image, TouchableOpacity } from 'react-native'
 import type { OrderCardProps } from '../types'
 import Entypo from '@expo/vector-icons/Entypo'
 import { moderateScale } from 'react-native-size-matters'
@@ -9,7 +9,7 @@ interface OrderCards {
 
 const OrderCard = ({item:{image, deliveryDate, productTitle, deliveryStatus}}:OrderCards) => {
   return (
-    <Pressable className='flex-row gap-3 items-center justify-between w-full'>
+    <Pressable className='flex-row gap-2 items-center justify-between w-full  border-b py-5 border-border'>
       <View 
       style={{ height: moderateScale(60), width: moderateScale(60) }}
       className='rounded-xl overflow-hidden'
