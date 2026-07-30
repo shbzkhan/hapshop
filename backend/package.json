@@ -1,0 +1,40 @@
+{
+  "name": "hapshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config dist/index.js",
+    "dev": "nodemon -r dotenv/config src/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Shahbaz Husain Khan",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongoose": "^5.11.96",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.1.2",
+    "@types/nodemailer": "^8.0.1",
+    "dotenv": "^17.4.2",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.8.1",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.3"
+  }
+}
