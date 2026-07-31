@@ -1,14 +1,1 @@
-import mongoose from 'mongoose'
-import { DB_NAME } from '../contant.ts'
-
-const connectDB:()=>Promise<void> = async () => {
-    try {
-        const connectInstance = await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)
-        console.log("MONGODB CONNECTED!!! HOST: ",connectInstance.connection.host)
-    } catch (error) {
-        console.log("MONGODB CONNECTION FAILED!!!", error)
-        process.exit(1)
-    }
-}
-
-export {connectDB}
+//postgresql connection

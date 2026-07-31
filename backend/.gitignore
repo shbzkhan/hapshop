@@ -99,6 +99,10 @@ dist
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
+# prisma
+.agents
+.claude
+.windsurf
 # vuepress build output
 .vuepress/dist
 
@@ -139,3 +143,4 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 src/utils/serviceAccountKey.json
+/src/generated/prisma
