@@ -14,15 +14,6 @@ dotenv.config({
 
 
 
-connectDB()
-        .then(()=>{
-            app.on("error", error=>{
-                    console.log("MONGODB CONNECTION ERROR ", error)
-            })
-           app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 5000, () => {
             console.log("Server run on port: ", process.env.PORT || 5000);
-            })
-        })
-        .catch(error => {
-            console.log("MONGODB CONNECTION FAILED!!!", error);
-        })
+})
