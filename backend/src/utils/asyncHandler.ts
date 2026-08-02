@@ -1,4 +1,5 @@
 import { type Request, type Response, type NextFunction} from "express";
+import { StatusCode } from "../types";
 type AsyncFn = (
   req: Request,
   res: Response,
@@ -8,13 +9,10 @@ const asyncHandler =(fn:AsyncFn)=>async(req:Request, res:Response, next?:NextFun
     try {
         await fn(req, res, next)
     } catch (error: any) {
-        console.error(error)
-        console.log(error)
-         res.status(error.code || 500).json({
+         res.status(error.code || StatusCode.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: error.message || "Internal Server Error",
         })
-        console.log(error)
     }
 };
 
