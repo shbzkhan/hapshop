@@ -144,3 +144,7 @@ dist
 .svelte-kit
 src/utils/serviceAccountKey.json
 /src/generated/prisma
+
+/src/generated/prisma
+
+/src/generated/prisma

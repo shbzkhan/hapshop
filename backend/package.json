@@ -1,46 +1,38 @@
 {
-  "name": "hapshop",
-  "version": "1.0.0",
-  "description": "",
+  "name": ".",
+  "module": "index.ts",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config dist/index.js",
-    "dev": "nodemon -r dotenv/config src/index.ts",
-    "build": "tsc"
+    "start": "node -r dotenv/config ./dist/index.js",
+    "dev": "nodemon -r dotenv/config src/index.ts"
   },
-  "keywords": [],
-  "author": "Shahbaz Husain Khan",
-  "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
+    "@types/bun": "latest",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/mongoose": "^5.11.96",
     "@types/multer": "^2.2.0",
-    "@types/node": "^26.1.2",
     "@types/nodemailer": "^8.0.1",
-    "@types/pg": "^8.20.0",
-    "dotenv": "^17.4.2",
     "nodemon": "^3.1.14",
     "prettier": "^3.9.6",
     "prisma": "^7.9.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
   },
   "dependencies": {
     "@prisma/adapter-neon": "^7.9.1",
-    "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.10.0",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.8.1",
     "multer": "^2.2.0",
-    "nodemailer": "^9.0.3",
-    "pg": "^8.22.0"
+    "nodemailer": "^9.0.3"
   }
 }
