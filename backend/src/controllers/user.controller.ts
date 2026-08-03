@@ -4,13 +4,22 @@ import { ApiError } from '../utils/ApiError.ts';
 import { successResponse } from '../utils/SuccessResponse.ts';
 import { prisma } from '../db/prisma.ts';
 import { StatusCode } from '../types/index.ts';
-import type { RegisterProps } from '../types/user.type.ts';
+import type { LoginProps, RegisterProps } from '../types/user.type.ts';
 
 
+// otp
+// export const otp = asyncHandler(async(req:Request, res:Response)=>{
+//   const {email, otp} = req.body as LoginProps;
+//   if (!email.trim() || !otp.trim()) {
+//     throw new ApiError(StatusCode.BAD_REQUEST, 'please fill all fields');
+//   }
 
+// })
+
+//register
 export const register = asyncHandler(async (req: Request, res: Response) => {
-  const { fullname, email } = req.body as RegisterProps
-  if (!fullname || !email) {
+  const { fullname, email, otp } = req.body as RegisterProps;
+  if (!fullname.trim() || !email.trim() || otp.trim()) {
     throw new ApiError(StatusCode.BAD_REQUEST, 'please fill all fields');
   }
 
@@ -31,4 +40,25 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
   });
 
   return successResponse(res, StatusCode.CREATED, 'account created successfully');
+});
+
+//login
+export const login = asyncHandler(async (req: Request, res: Response) => {
+  const { email, otp } = req.body as LoginProps;
+  if (!email.trim() || !otp.trim()) {
+    throw new ApiError(StatusCode.BAD_REQUEST, 'please fill all fields');
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email,
+    },
+  });
+  if (!user) {
+    throw new ApiError(StatusCode.CONFLICT, 'email not registered');
+  }
+
+  //jwt and redis otp validation function
+
+  return successResponse(res, StatusCode.OK, 'account fetched successfully',user);
 });
