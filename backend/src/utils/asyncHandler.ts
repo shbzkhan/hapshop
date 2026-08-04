@@ -1,5 +1,5 @@
 import { type Request, type Response, type NextFunction} from "express";
-import { StatusCode } from "../types";
+import { StatusCode } from "../types/index.ts";
 type AsyncFn = (
   req: Request,
   res: Response,
