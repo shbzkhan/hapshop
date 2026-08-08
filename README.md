@@ -316,15 +316,3 @@ Contributions are welcome.
 3. Commit Changes
 4. Push Branch
 5. Open Pull Request
-
----
-
-## Author
-
-**Shahbaz Khan**
-
-B.Tech CSE
-
-- React Native Developer
-
-- Backend Developer
