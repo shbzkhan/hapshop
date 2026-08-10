@@ -287,10 +287,6 @@ EMAIL_PASS=
 CLIENT_URL=
 ```
 
-## Screenshots
-
-Coming Soon...
-
 ## API Documentation
 
 Coming Soon...
