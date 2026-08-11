@@ -3,9 +3,9 @@ import { StatusCode } from "../types/index.ts";
 type AsyncFn = (
   req: Request,
   res: Response,
-  next?: NextFunction
+  next: NextFunction
 ) => Promise<unknown>;
-const asyncHandler =(fn:AsyncFn)=>async(req:Request, res:Response, next?:NextFunction)=>{
+const asyncHandler =(fn:AsyncFn)=>async(req:Request, res:Response, next:NextFunction)=>{
     try {
         await fn(req, res, next)
     } catch (error: any) {

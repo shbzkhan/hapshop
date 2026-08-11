@@ -27,6 +27,7 @@ model User {
   role      UserRole @default(CUSTOMER)
   gender    Gender?
   isBlocked Boolean  @default(false)
+  refreshToken String?
 
   //relations
   addresses       Address[]
