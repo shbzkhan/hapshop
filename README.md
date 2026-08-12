@@ -17,9 +17,9 @@ The architecture focuses on scalability, security, maintainability, and clean co
 
 ## Project Goals
 
-- Secure Authentication
+- Secure Authentication & Authorization
 - Clean Architecture
-- Scalable Database
+- Scalable Database Design
 - RESTful APIs
 - Modern Mobile UI
 - Type Safety
@@ -31,21 +31,21 @@ Most beginner e-commerce projects lack scalability, proper authentication, clean
 
 HapShop solves these problems by providing:
 
-- Modular architecture
-- Secure authentication
-- Type-safe backend
-- Optimized database design
-- Clean API responses
+- Modular and scalable architecture
+- Secure JWT-based authentication
+- Type-safe backend with TypeScript
+- Optimized relational database design
+- Consistent and clean API responses
 - Production-ready folder structure
 
 ## Repository Structure
 
-```text
+```
 hapshop/
 │
 ├── backend/
-│   ├─ ─ prisma/
-|   |src/
+│   ├── prisma/
+│   ├── src/
 │   ├── package.json
 │   └── tsconfig.json
 │
@@ -63,200 +63,203 @@ hapshop/
 
 ### Tech Stack
 
-- Node.js
-- Express.js
-- TypeScript
-- PostgreSQL
-- Prisma ORM
-- JWT Authentication
-- Bcrypt
-- Nodemailer
-- Cookie Parser
+| Technology | Purpose             |
+| ---------- | ------------------- |
+| Node.js    | Runtime Environment |
+| Express.js | Web Framework       |
+| TypeScript | Type Safety         |
+| PostgreSQL | Database            |
+| Prisma ORM | Database Management |
+| JWT        | Authentication      |
+| Bcrypt     | Password Hashing    |
+| Nodemailer | Email Service       |
 
 ### Backend Features
 
-### Authentication
+#### Authentication
 
-- User Registration
-- Login
-- Logout
-- JWT Authentication
-- Refresh Token
+- User Registration with validation
+- Secure Login with JWT tokens
+- Logout functionality
+- JWT Access & Refresh tokens
 - Email Verification
 - OTP Verification
-- Forgot Password
-- Reset Password
+- Forgot & Reset Password flow
 
-### User
+#### User Management
 
-- Profile
-- Update Profile
+- User Profile
+- Update Profile Information
 - Change Password
-- Multiple Addresses
+- Multiple Addresses Management
 
-### Product
+#### Product Management
 
-- Create Product
-- Update Product
-- Delete Product
-- Product Details
-- Product Search
-- Category
-- Pagination
-- Filtering
+- Create, Update, Delete Products
+- Product Details & Search
+- Category Management
+- Pagination & Advanced Filtering
 
-### Cart
+#### Shopping Cart
 
-- Add to Cart
-- Update Quantity
-- Remove Item
+- Add/Remove Items
+- Update Quantities
 - Clear Cart
+- Cart Persistence
 
-### Wishlist
+#### Wishlist
 
-- Add Wishlist
-- Remove Wishlist
+- Add to Wishlist
+- Remove from Wishlist
+- Wishlist Management
 
-### Orders
+#### Orders
 
-- Place Order
+- Place Orders
 - Order History
 - Order Details
-- Order Status
-  
-### API Features
+- Order Status Tracking
 
-- RESTful APIs
-- Error Handling
-- Custom ApiResponse
-- Custom ApiError
-- Status Code Enum
-- Validation
-- Middleware
-- Authentication Middleware
+#### API Infrastructure
 
-## Mobile Application
+- RESTful API Design
+- Comprehensive Error Handling
+- Custom ApiResponse & ApiError classes
+- HTTP Status Code Enums
+- Request Validation
+- Middleware System
+- Authentication Guards
 
-## Tech Stack
+### Backend Folder Structure
 
-- React Native
-- Expo
-- TypeScript
-- Redux Toolkit
-- RTK Query
-- NativeWind
-
-### Mobile Features
-
-### Authentication
-
-- Login
-- Register
-- OTP Verification
-- Forgot Password
-
-### Shopping
-
-- Home
-- Categories
-- Product Details
-- Search
-- Wishlist
-- Cart
-
-### User
-
-- Orders
-- Profile
-- Addresses
-- Settings
-
-## Database
-
-Main database entities:
-
-- User
-- Product
-- Category
-- Cart
-- CartItem
-- Wishlist
-- Order
-- OrderItem
-- Address
-- OTP
-- RefreshToken
-
-## Technologies
-
-| Backend | Mobile |
-|----------|---------|
-| Node.js | React Native |
-| Express.js | Expo |
-| PostgreSQL | Redux Toolkit |
-| Prisma ORM | RTK Query |
-| TypeScript | NativeWind |
-| JWT | AsyncStorage |
-
-## Backend Folder Structure
-
-```text
+```
 backend/
 │
 ├── prisma/
+│   └── schema.prisma
 │
 ├── src/
-│   ├── config/
-│   ├── constants/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── types/
-│   ├── utils/
-│   ├── validators/
-│   └── index.ts
+│   ├── config/          # Configuration files
+│   ├── constants/       # Application constants
+│   ├── controllers/     # Route controllers
+│   ├── middlewares/     # Express middlewares
+│   ├── models/          # Database models
+│   ├── routes/          # API routes
+│   ├── services/        # Business logic
+│   ├── types/           # TypeScript types
+│   ├── utils/           # Utility functions
+│   ├── validators/      # Input validation
+│   └── index.ts         # Entry point
 │
+├── .env.example
 ├── package.json
 └── tsconfig.json
 ```
 
-## Mobile Folder Structure
+## Mobile Application
 
-```text
+### Tech Stack
+
+| Technology    | Purpose                  |
+| ------------- | ------------------------ |
+| React Native  | Mobile Framework         |
+| Expo          | Development & Deployment |
+| TypeScript    | Type Safety              |
+| Redux Toolkit | State Management         |
+| RTK Query     | API Caching & Sync       |
+| NativeWind    | Styling (Tailwind CSS)   |
+| AsyncStorage  | Local Storage            |
+
+### Mobile Features
+
+#### Authentication
+
+- Secure Login
+- User Registration
+- OTP Verification
+- Forgot Password Recovery
+
+#### Shopping Experience
+
+- Home Screen with Featured Products
+- Browse Categories
+- Product Details & Reviews
+- Full-Text Search
+- Add to Wishlist
+- Shopping Cart Management
+
+#### User Account
+
+- Order History & Details
+- User Profile Management
+- Saved Addresses
+- Account Settings
+
+### Mobile Folder Structure
+
+```
 mobile/
 │
-├── app/
-├── assets/
-├── components/
-├── hooks/
-├── services/
-├── store/
-├── styles/
-├── types/
-├── utils/
-└── app.json
+├── app/                 # Navigation & screens
+├── assets/              # Images & static files
+├── components/          # Reusable components
+├── hooks/               # Custom React hooks
+├── services/            # API services
+├── store/               # Redux store setup
+├── styles/              # Global styles
+├── types/               # TypeScript types
+├── utils/               # Utility functions
+│
+├── app.json
+└── package.json
 ```
 
+## Database Schema
+
+### Core Entities
+
+- **User** – Customer accounts with authentication
+- **Product** – Product catalog with details
+- **Category** – Product categorization
+- **Cart** – Shopping cart management
+- **CartItem** – Individual cart items
+- **Wishlist** – User wishlists
+- **Order** – Customer orders
+- **OrderItem** – Order line items
+- **Address** – User delivery addresses
+- **OTP** – One-time passwords for verification
+- **RefreshToken** – JWT refresh token storage
+
 ## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- PostgreSQL database
 
 ### Clone Repository
 
 ```bash
 git clone https://github.com/your-username/hapshop.git
+cd hapshop
 ```
+
 ### Backend Setup
 
 ```bash
 cd backend
 
+# Install dependencies
 npm install
 
+# Generate Prisma client
 npx prisma generate
 
+# Run migrations
 npx prisma migrate dev
 
+# Start development server
 npm run dev
 ```
 
@@ -265,41 +268,61 @@ npm run dev
 ```bash
 cd mobile
 
+# Install dependencies
 npm install
 
+# Start Expo development server
 npx expo start
 ```
+
 ## Environment Variables
 
-Backend `.env`
+### Backend `.env`
 
 ```env
-DATABASE_URL=
+# Database
+DATABASE_URL=postgresql://user:password@localhost:5432/hapshop
 
-JWT_ACCESS_SECRET=
+# JWT Secrets
+JWT_ACCESS_SECRET=your_access_token_secret_key
+JWT_REFRESH_SECRET=your_refresh_token_secret_key
 
-JWT_REFRESH_SECRET=
+# Email Configuration
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
 
-EMAIL_USER=
+# Client URL
+CLIENT_URL=http://localhost:3000
+NODE_ENV=development
+```
 
-EMAIL_PASS=
+### Mobile `.env`
 
-CLIENT_URL=
+```env
+EXPO_PUBLIC_API_BASE_URL=http://your-backend-url/api
 ```
 
 ## API Documentation
 
 Coming Soon...
 
-### Future Improvements
+## Future Improvements
 
-- Payment Gateway
-- Coupon System
-- Product Reviews
+- Payment Gateway Integration
+- Coupon & Discount System
+- Product Reviews & Ratings
 - Seller Dashboard
 - Admin Dashboard
 - Push Notifications
 - Analytics Dashboard
 - Inventory Management
-- Multi Vendor Support
+- Multi-Vendor Support
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
