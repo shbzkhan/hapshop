@@ -139,17 +139,17 @@ backend/
 │   └── schema.prisma
 │
 ├── src/
-│   ├── config/          # Configuration files
-│   ├── constants/       # Application constants
-│   ├── controllers/     # Route controllers
-│   ├── middlewares/     # Express middlewares
-│   ├── models/          # Database models
-│   ├── routes/          # API routes
-│   ├── services/        # Business logic
-│   ├── types/           # TypeScript types
-│   ├── utils/           # Utility functions
-│   ├── validators/      # Input validation
-│   └── index.ts         # Entry point
+│   ├── config/          
+│   ├── constants/      
+│   ├── controllers/     
+│   ├── middlewares/    
+│   ├── models/          
+│   ├── routes/          
+│   ├── services/        
+│   ├── types/           
+│   ├── utils/           
+│   ├── validators/      
+│   └── index.ts         
 │
 ├── .env.example
 ├── package.json
@@ -200,15 +200,15 @@ backend/
 ```
 mobile/
 │
-├── app/                 # Navigation & screens
-├── assets/              # Images & static files
-├── components/          # Reusable components
-├── hooks/               # Custom React hooks
-├── services/            # API services
-├── store/               # Redux store setup
-├── styles/              # Global styles
-├── types/               # TypeScript types
-├── utils/               # Utility functions
+├── app/               
+├── assets/              
+├── components/          
+├── hooks/               
+├── services/            
+├── store/               
+├── styles/              
+├── types/              
+├── utils/               
 │
 ├── app.json
 └── package.json
@@ -241,7 +241,7 @@ mobile/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/hapshop.git
+git clone https://github.com/shbzkhan/hapshop.git
 cd hapshop
 ```
 
@@ -250,16 +250,12 @@ cd hapshop
 ```bash
 cd backend
 
-# Install dependencies
 npm install
 
-# Generate Prisma client
 npx prisma generate
 
-# Run migrations
 npx prisma migrate dev
 
-# Start development server
 npm run dev
 ```
 
@@ -268,10 +264,8 @@ npm run dev
 ```bash
 cd mobile
 
-# Install dependencies
 npm install
 
-# Start Expo development server
 npx expo start
 ```
 
