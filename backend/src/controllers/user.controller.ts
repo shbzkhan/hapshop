@@ -5,16 +5,26 @@ import { successResponse } from '../utils/SuccessResponse.ts';
 import { prisma } from '../db/prisma.ts';
 import { StatusCode } from '../types/index.ts';
 import type { LoginProps, RegisterProps } from '../types/user.type.ts';
+import { generateOTP } from '../utils/otpGenerator.ts';
+import { redis } from '../db/redis.ts';
+import { otpKey } from '../utils/otpKey.ts';
 
 
 // otp
-// export const otp = asyncHandler(async(req:Request, res:Response)=>{
-//   const {email, otp} = req.body as LoginProps;
-//   if (!email.trim() || !otp.trim()) {
-//     throw new ApiError(StatusCode.BAD_REQUEST, 'please fill all fields');
-//   }
+export const otp = asyncHandler(async(req:Request, res:Response)=>{
+  const {email} = req.body as {email: string};
+  if (!email.trim()) {
+    throw new ApiError(StatusCode.BAD_REQUEST, 'please fill all fields');
+  }
 
-// })
+  const otp = generateOTP();
+  console.log("otp: ", otp);
+
+  await redis.set(otpKey(email), otp, 'EX', 300);
+
+  return successResponse(res, StatusCode.OK, "OTP sent successfully")
+
+})
 
 //register
 export const register = asyncHandler(async (req: Request, res: Response) => {
@@ -32,13 +42,24 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
     throw new ApiError(StatusCode.CONFLICT, 'email already registered');
   }
 
-  prisma.user.create({
+  const savedOtp = await redis.get(otpKey(email));
+
+  if(!savedOtp){
+    throw new ApiError(StatusCode.BAD_REQUEST, 'OTP expired and not found');
+  }
+
+  if(savedOtp !== otp) {
+    throw new ApiError(StatusCode.BAD_REQUEST, 'OTP is invalid');
+  }
+
+  await prisma.user.create({
     data: {
       fullname,
       email,
     },
   });
 
+  await redis.del(otpKey(email));
   return successResponse(res, StatusCode.CREATED, 'account created successfully');
 });
 
@@ -59,6 +80,16 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
   }
 
   //jwt and redis otp validation function
+  const savedOtp = await redis.get(otpKey(email));
+
+  if(!savedOtp){
+    throw new ApiError(StatusCode.BAD_REQUEST, 'OTP expired and not found');
+  }
+
+  if(savedOtp !== otp) {
+    throw new ApiError(StatusCode.BAD_REQUEST, 'OTP is invalid');
+  }
+  await redis.del(otpKey(email));
 
   return successResponse(res, StatusCode.OK, 'account fetched successfully',user);
 });
